@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalna Potera</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <audio id="startSound" src="start.mp3"></audio>
+    <audio id="gameSound" src="game.mp3"></audio>
+    <audio id="endSound" src="game.mp3"></audio>
+    <audio id="end" src="end.mp3"></audio>
+    <audio id="loseSound" src="game.mp3"></audio>
+    <audio id="tacno_igrac" src="tacno_igrac.mp3"></audio>
+    <audio id="tacno_tragac" src="tacno_tragac.mp3"></audio>
+    <audio id="pozadinska" src="treca_igra_pozadinska.mp3" loop></audio>
+
+    <script> 
+        window.onload = function() {
+            var audio = document.getElementById('pozadinska');
+            audio.volume = 0.2; // Postavi volumen na 20% jačine odmah nakon učitavanja stranice
+            audio.play(); // Pokreće zvuk automatski
+        }
+    </script>
+
+    <script> 
+         window.onload = function() {
+             var audio = document.getElementById('tacno_igrac');
+             audio.volume = 0.2; // Postavi volumen na 20% jačine odmah nakon učitavanja stranice
+             audio.play(); // Pokreće zvuk automatski
+        }
+    </script>
+    
+    <div id="customAlert" class="alert"></div>
+
+    <div class="container" id="menu">
+        <h1>Izaberite igru</h1>
+        <button onclick="startFinalChase()">Finalna potera</button>
+    </div>
+
+    <div id="messageBox" style="display: none; position: fixed; top: 10px; left: 50%; transform: translateX(-50%); 
+background-color: black; color: white; padding: 15px; border-radius: 5px; font-size: 18px; z-index: 1000; text-align: center;">
+</div>
+
+
+    <div class="container" id="game" style="display:none;">
+        <h1 id="gameTitle">Finalna Potera</h1>
+        <div id="timer">Vreme: 10</div>
+        <div id="stepCount">Koraci: 0</div>
+        <div class="question" id="question">Pitanja će biti postavljena uživo</div>
+        <button onclick="moveTeam()">✅ Tačan odgovor</button>
+         
+
+        <!-- Dugmadi za pauzu i pokretanje tragača -->
+        <button id="pauseButton" style="display:none;" onclick="pauseGame()">Pauza</button>
+        <button id="resumeButton" style="display:none;" onclick="resumeChaser()">Kreni sa tragačem</button>
+        <button id="chaserAnswerButton" style="display: none;" onclick="moveChaser()">Tragač odgovara</button>
+
+        <!-- Sekcija za prikaz odgovora -->
+        <div id="answerListContainer">
+            <h2>Lista odgovora</h2>
+            <div id="answerList"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

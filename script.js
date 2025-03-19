@@ -1,7 +1,7 @@
 let teamSteps = 0;
 let chaserSteps = 0;
-let timeLeft = 10; // Vreme za igrača
-let chaserTimeLeft = 10; // Vreme za tragača
+let timeLeft = 120; // Vreme za igrača
+let chaserTimeLeft = 120; // Vreme za tragača
 let timer;
 let chaserTimer;
 let gamePaused = false; // Praćenje stanja igre
@@ -14,7 +14,7 @@ function startFinalChase() {
     document.getElementById("gameTitle").textContent = "Finalna potera";
     document.getElementById("stepCount").textContent = `Koraci: ${teamSteps}`;
     document.getElementById("answerList").innerHTML = "";
-    timeLeft = 10;
+    timeLeft = 120;
     chaserSteps = 0;
     gamePaused = false;
     isChaserTurn = false;

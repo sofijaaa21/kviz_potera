@@ -106,7 +106,7 @@ function startChaserTurn() {
     isChaserTurn = true;
     document.getElementById("question").textContent = "Tragač sada odgovara!";
     chaserSteps = 0;
-    chaserTimeLeft = 10;
+    chaserTimeLeft = 120;
 
     chaserTimer = setInterval(() => {
         if (gamePaused) return;
